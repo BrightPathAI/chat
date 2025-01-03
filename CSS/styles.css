@@ -28,6 +28,12 @@ header {
   align-items: center;
 }
 
+.counter img {
+  border-radius: 15px;
+  width: 20vw;
+  height: auto;
+}
+
 footer {
   background-color: #ffdc3d;
   padding: 2vw;
