@@ -1,44 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BrightPath - Home</title>
-  <link rel="stylesheet" href="CSS/styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrightPath AI - Home</title>
+    <style>
+        :root {
+            --primary: #FFC107; /* Yellow */
+            --secondary: #FFA000; /* Darker yellow */
+            --light: #FFF8E1; /* Light yellow background */
+            --dark: #212121;
+            --text-on-yellow: #333333;
+            --card-bg: white;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            padding: 0;
+            margin: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: var(--text-on-yellow);
+            padding: 1rem 2rem;
+            text-align: center;
+            border-bottom: 3px solid var(--secondary);
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            color: var(--secondary);
+            margin: 1.5rem 0 1rem;
+            transition: color 0.3s;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+        
+        .ai-tool-container {
+            margin: 2rem 0 3rem 0;
+            height: 600px;
+            background: white;
+            border-radius: 16px;
+            padding: 1px; /* Creates containment for iframe */
+            transition: background 0.3s;
+        }
+        
+        .accessibility-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .feature-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            flex: 1 1 300px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-top: 4px solid var(--primary);
+            transition: background 0.3s, box-shadow 0.3s;
+        }
+        
+        .feature-card h3 {
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+        
+        /* Accessibility features */
+        .accessibility-tools {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .accessibility-btn {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: transform 0.2s, background 0.3s;
+        }
+        
+        .accessibility-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Dark mode styles */
+        body.high-contrast {
+            background-color: #121212 !important;
+            color: #e0e0e0 !important;
+        }
+        
+        body.high-contrast header {
+            background-color: #333 !important;
+            color: #fff !important;
+        }
+        
+        body.high-contrast h2 {
+            color: #FFC107 !important;
+        }
+        
+        body.high-contrast .feature-card {
+            background: #1e1e1e !important;
+            color: #e0e0e0 !important;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+        
+        body.high-contrast .feature-card h3 {
+            color: #FFA000 !important;
+        }
+        
+        body.high-contrast .ai-tool-container {
+            background: #1e1e1e !important;
+        }
+        
+        body.high-contrast iframe {
+            filter: brightness(0.8) contrast(1.2);
+        }
+    </style>
 </head>
-
 <body>
-  <header>
-    <h1>Welcome to BrightPath!</h1>
-  </header>
-
-  <div class="container">
-    <iframe id="embed-preview-iframe" loading="eager"
-      src="https://embed.pickaxeproject.com/axe?id=BrightPath_J7L3M&mode=embed_gold&host=beta&theme=light&opacity=100&font_header=Real+Head+Pro&size_header=30&font_body=Real+Head+Pro&size_body=16&font_labels=Real+Head+Pro&size_labels=14&font_button=Real+Head+Pro&size_button=16&c_fb=F6F8FA&c_ff=FFFFFF&c_fbd=888888&c_rb=FFFFFF&c_bb=000000&c_bt=FFFFFF&c_t=000000&s_ffo=100&s_rbo=100&s_bbo=100&s_f=box&s_b=filled&s_t=2&s_to=1&s_r=3&image=hide"
-      width="100%" height="100%"
-      style="border:1px solid rgba(0, 0, 0, 1);transition:.3s;border-radius:24px;max-width:100%"
-      frameBorder="0"></iframe>
-    <div id="pickaxe-inline-BrightPath_J7L3M"></div>
-  </div>
-
-  <div class="counter">
-    <h2>Webiste Visits:</h2>
-    <img src="https://www.coolseotools.com/website-visitor-counter/count/&style=style12&show=p&num=6&uid=4h" />
-  </div>
+    <header>
+        <h1>BrightPath AI</h1>
+        <p>Artificial intelligence for mental health and accessibility</p>
+    </header>
+    
+    <div class="container">
+        <section class="ai-tool-container">
+            <iframe id="embed-preview-iframe" loading="eager"
+                src="https://embed.pickaxeproject.com/axe?id=BrightPath_J7L3M&mode=embed_gold&host=beta&theme=light&opacity=100&font_header=Real+Head+Pro&size_header=30&font_body=Real+Head+Pro&size_body=16&font_labels=Real+Head+Pro&size_labels=14&font_button=Real+Head+Pro&size_button=16&c_fb=F6F8FA&c_ff=FFFFFF&c_fbd=888888&c_rb=FFFFFF&c_bb=000000&c_bt=FFFFFF&c_t=000000&s_ffo=100&s_rbo=100&s_bbo=100&s_f=box&s_b=filled&s_t=2&s_to=1&s_r=3&image=hide"
+                width="100%" height="100%"
+                style="border:1px solid rgba(0, 0, 0, 0.1);transition:.3s;border-radius:16px;max-width:100%"
+                frameBorder="0"></iframe>
+        </section>
+        
+        <section>
+            <h2>Accessible AI Designed for You</h2>
+            <p>BrightPath AI provides a calm, supportive experience with artificial intelligence tools designed specifically for people with mental health conditions and disabilities.</p>
+            
+            <div class="accessibility-features">
+                <div class="feature-card">
+                    <h3>Reduced Anxiety Design</h3>
+                    <p>Our interface minimizes stressors with predictable interactions and no sudden changes.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Cognitive Support</h3>
+                    <p>Features to help with focus, memory, and executive function challenges.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Sensory-Friendly</h3>
+                    <p>Adjustable visual and interaction settings to accommodate sensory sensitivities.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <div class="accessibility-tools">
+        <button class="accessibility-btn" aria-label="Accessibility Menu" title="Accessibility Options">♿</button>
+    </div>
+    
+    <script>
+        document.querySelector('.accessibility-btn').addEventListener('click', function() {
+            const body = document.body;
+            body.classList.toggle('high-contrast');
+            
+            const iframe = document.getElementById('embed-preview-iframe');
+            if (iframe) {
+                const currentSrc = iframe.src;
+                const newTheme = body.classList.contains('high-contrast') ? 'dark' : 'light';
+                iframe.src = currentSrc.replace(/theme=\w+/, 'theme=' + newTheme);
+            }
+        });
+    </script>
 </body>
-<footer>
-  <p>Connect with us on social media:</p>
-  <div class="social-icons">
-    <a href="https://youtube.com" target="_blank"><i class="fa fa-youtube-play"></i></a>
-    <a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
-    <a href="https://github.com" target="_blank"><i class="fa fa-github"></i></a>
-    <a href="https://instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
-    <a href="https://facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
-    <a href="https://pinterest.com" target="_blank"><i class="fa fa-pinterest"></i></a>
-    <a href="https://discord.com" target="_blank"><i class="fa fa-discord"></i></a>
-  </div>
-</footer>
-
 </html>
