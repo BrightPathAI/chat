@@ -3,211 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrightPath AI - Home</title>
+    <title>BrightPath AI - Accessible AI Designed for You</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 50%, #fde68a 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
         :root {
-            --primary: #FFC107; /* Yellow */
-            --secondary: #FFA000; /* Darker yellow */
-            --light: #FFF8E1; /* Light yellow background */
-            --dark: #212121;
-            --text-on-yellow: #333333;
-            --card-bg: white;
+            --scroll-behavior: smooth;
         }
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        html {
+            scroll-behavior: var(--scroll-behavior);
         }
         
-        body {
-            background-color: var(--light);
-            color: var(--dark);
-            line-height: 1.6;
-            padding: 0;
-            margin: 0;
-            transition: background-color 0.3s, color 0.3s;
+        .high-contrast {
+            --tw-bg-opacity: 1;
+            background-color: rgb(0 0 0 / var(--tw-bg-opacity)) !important;
+            color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
         }
         
-        header {
-            background-color: var(--primary);
-            color: var(--text-on-yellow);
-            padding: 1rem 2rem;
-            text-align: center;
-            border-bottom: 3px solid var(--secondary);
-            transition: background-color 0.3s, color 0.3s;
+        .high-contrast .gradient-bg {
+            background: black !important;
         }
         
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        h2 {
-            font-size: 1.8rem;
-            color: var(--secondary);
-            margin: 1.5rem 0 1rem;
-            transition: color 0.3s;
-        }
-        
-        p {
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-            transition: color 0.3s;
-        }
-        
-        .ai-tool-container {
-            margin: 2rem 0 3rem 0;
-            height: 600px;
-            background: white;
-            border-radius: 16px;
-            padding: 1px; /* Creates containment for iframe */
-            transition: background 0.3s;
-        }
-        
-        .accessibility-features {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-        
-        .feature-card {
-            background: var(--card-bg);
-            border-radius: 8px;
-            padding: 1.5rem;
-            flex: 1 1 300px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            border-top: 4px solid var(--primary);
-            transition: background 0.3s, box-shadow 0.3s;
-        }
-        
-        .feature-card h3 {
-            color: var(--secondary);
-            margin-bottom: 0.5rem;
-            transition: color 0.3s;
-        }
-        
-        /* Accessibility features */
-        .accessibility-tools {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
-        
-        .accessibility-btn {
-            background: var(--secondary);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            font-size: 1.5rem;
-            cursor: pointer;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            transition: transform 0.2s, background 0.3s;
-        }
-        
-        .accessibility-btn:hover {
-            transform: scale(1.1);
-        }
-        
-        /* Dark mode styles */
-        body.high-contrast {
-            background-color: #121212 !important;
-            color: #e0e0e0 !important;
-        }
-        
-        body.high-contrast header {
-            background-color: #333 !important;
-            color: #fff !important;
-        }
-        
-        body.high-contrast h2 {
-            color: #FFC107 !important;
-        }
-        
-        body.high-contrast .feature-card {
-            background: #1e1e1e !important;
-            color: #e0e0e0 !important;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-        }
-        
-        body.high-contrast .feature-card h3 {
-            color: #FFA000 !important;
-        }
-        
-        body.high-contrast .ai-tool-container {
-            background: #1e1e1e !important;
-        }
-        
-        body.high-contrast iframe {
-            filter: brightness(0.8) contrast(1.2);
+        .high-contrast .card-hover:hover {
+            outline: 3px solid yellow;
         }
     </style>
 </head>
-<body>
-    <header>
-        <h1>BrightPath AI</h1>
-        <p>Artificial intelligence for mental health and accessibility</p>
+<body id="top" class="font-sans bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="gradient-bg py-6">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <i class="fas fa-brain text-yellow-600 text-3xl mr-3"></i>
+                    <h1 class="text-2xl md:text-3xl font-bold text-yellow-800">BrightPath AI</h1>
+                </div>
+                <nav>
+                    <ul class="flex space-x-6">
+                        <li><a href="#top" class="text-yellow-700 hover:text-yellow-900 font-medium">Home</a></li>
+                        <li><a href="#features" class="text-yellow-600 hover:text-yellow-800">Features</a></li>
+                        <li><a href="#demo-iframe" class="text-yellow-600 hover:text-yellow-800">Demo</a></li>
+                        <li><a href="#testimonials" class="text-yellow-600 hover:text-yellow-800">Testimonials</a></li>
+                    </ul>
+                </nav>
+                <button class="md:hidden text-blue-700">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
     </header>
-    
-    <div class="container">
-        <section class="ai-tool-container">
-            <iframe id="embed-preview-iframe" loading="eager"
-                src="https://embed.pickaxeproject.com/axe?id=BrightPath_J7L3M&mode=embed_gold&host=beta&theme=light&opacity=100&font_header=Real+Head+Pro&size_header=30&font_body=Real+Head+Pro&size_body=16&font_labels=Real+Head+Pro&size_labels=14&font_button=Real+Head+Pro&size_button=16&c_fb=F6F8FA&c_ff=FFFFFF&c_fbd=888888&c_rb=FFFFFF&c_bb=000000&c_bt=FFFFFF&c_t=000000&s_ffo=100&s_rbo=100&s_bbo=100&s_f=box&s_b=filled&s_t=2&s_to=1&s_r=3&image=hide"
-                width="100%" height="100%"
-                style="border:1px solid rgba(0, 0, 0, 0.1);transition:.3s;border-radius:16px;max-width:100%"
-                frameBorder="0"></iframe>
-        </section>
-        
-        <section>
-            <h2>Accessible AI Designed for You</h2>
-            <p>BrightPath AI provides a calm, supportive experience with artificial intelligence tools designed specifically for people with mental health conditions and disabilities.</p>
-            
-            <div class="accessibility-features">
-                <div class="feature-card">
-                    <h3>Reduced Anxiety Design</h3>
-                    <p>Our interface minimizes stressors with predictable interactions and no sudden changes.</p>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg py-16 md:py-24">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold text-yellow-900 mb-6">Accessible AI Designed for You</h2>
+            <p class="text-xl md:text-2xl text-yellow-800 max-w-3xl mx-auto mb-10">
+                BrightPath AI provides a calm, supportive experience with artificial intelligence tools designed specifically for people with mental health conditions and disabilities.
+            </p>
+            <div class="flex justify-center">
+                <a href="#demo-iframe" class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                    Get Started
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-yellow-900 mb-12">Our Supportive Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="card-hover bg-yellow-50 rounded-xl p-8 border border-yellow-100">
+                    <div class="text-yellow-600 mb-4">
+                        <i class="fas fa-heartbeat text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-yellow-900 mb-3">Reduced Anxiety Design</h3>
+                    <p class="text-yellow-800">
+                        Our interface minimizes stressors with predictable interactions and no sudden changes.
+                    </p>
                 </div>
                 
-                <div class="feature-card">
-                    <h3>Cognitive Support</h3>
-                    <p>Features to help with focus, memory, and executive function challenges.</p>
+                <!-- Feature 2 -->
+                <div class="card-hover bg-amber-50 rounded-xl p-8 border border-amber-100">
+                    <div class="text-amber-600 mb-4">
+                        <i class="fas fa-brain text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-amber-900 mb-3">Cognitive Support</h3>
+                    <p class="text-amber-800">
+                        Features to help with focus, memory, and executive function challenges.
+                    </p>
                 </div>
                 
-                <div class="feature-card">
-                    <h3>Sensory-Friendly</h3>
-                    <p>Adjustable visual and interaction settings to accommodate sensory sensitivities.</p>
+                <!-- Feature 3 -->
+                <div class="card-hover bg-amber-50 rounded-xl p-8 border border-amber-100">
+                    <div class="text-amber-600 mb-4">
+                        <i class="fas fa-eye text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-amber-900 mb-3">Sensory-Friendly</h3>
+                    <p class="text-amber-800">
+                        Adjustable visual and interaction settings to accommodate sensory sensitivities.
+                    </p>
                 </div>
             </div>
-        </section>
-    </div>
-    
-    <div class="accessibility-tools">
-        <button class="accessibility-btn" aria-label="Accessibility Menu" title="Accessibility Options">♿</button>
-    </div>
-    
-    <script>
-        document.querySelector('.accessibility-btn').addEventListener('click', function() {
-            const body = document.body;
-            body.classList.toggle('high-contrast');
-            
-            const iframe = document.getElementById('embed-preview-iframe');
-            if (iframe) {
-                const currentSrc = iframe.src;
-                const newTheme = body.classList.contains('high-contrast') ? 'dark' : 'light';
-                iframe.src = currentSrc.replace(/theme=\w+/, 'theme=' + newTheme);
-            }
-        });
-    </script>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo-iframe" class="py-16 gradient-bg">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-yellow-900 mb-6">Experience Our Platform</h2>
+            <div class="max-w-4xl mx-auto h-[600px]">
+                <iframe id="embed-preview-iframe" loading="eager" src="https://embed.pickaxeproject.com/axe?id=BrightPath_J7L3M&amp;mode=embed_gold&amp;host=beta&amp;theme=light&amp;opacity=100&amp;font_header=Real+Head+Pro&amp;size_header=30&amp;font_body=Real+Head+Pro&amp;size_body=16&amp;font_labels=Real+Head+Pro&amp;size_labels=14&amp;font_button=Real+Head+Pro&amp;size_button=16&amp;c_fb=F6F8FA&amp;c_ff=FFFFFF&amp;c_fbd=888888&amp;c_rb=FFFFFF&amp;c_bb=000000&amp;c_bt=FFFFFF&amp;c_t=000000&amp;s_ffo=100&amp;s_rbo=100&amp;s_bbo=100&amp;s_f=box&amp;s_b=filled&amp;s_t=2&amp;s_to=1&amp;s_r=3&amp;image=hide" width="100%" height="100%" style="border:1px solid rgba(0, 0, 0, 0.1);transition:.3s;border-radius:16px;max-width:100%" frameborder="0"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section id="testimonials" class="py-16 bg-amber-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-yellow-900 mb-12">What Our Users Say</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-xl shadow-md p-8 relative">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-t-xl"></div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" 
+                                 alt="Sarah J." 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Sarah J.</h4>
+                            <p class="text-amber-600">Anxiety Support User</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "BrightPath AI has been a game-changer for me. The calm interface and predictable interactions help me stay focused without triggering my anxiety. It's the first technology that truly understands my needs."
+                    </p>
+                    <div class="flex mt-4 space-x-1">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <h3 class="text-xl font-bold mb-4">BrightPath AI</h3>
+                <p class="text-yellow-200">
+                    Creating accessible technology for mental health and cognitive support.
+                </p>
+            </div>
+            <div class="border-t border-yellow-800 mt-8 pt-8 text-center text-yellow-300">
+                <p>&copy; 2023 BrightPath AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
